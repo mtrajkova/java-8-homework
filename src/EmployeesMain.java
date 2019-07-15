@@ -17,7 +17,7 @@ public class EmployeesMain {
         employeeList.stream().sorted(Comparator.comparingInt(Employee::getSalary)).collect(Collectors.toList()).forEach(System.out::println);
 
 
-        System.out.println("\nEMPLOYEE FROM SKOPJE THAT HAS THE LARGEST SALARY");
+        System.out.println("\nEMPLOYEE FROM SKOPJE WITH THE LARGEST SALARY");
         Employee richestSkopjeEmployee = employeeList.stream().filter(e -> e.getCity().equals("Skopje")).sorted(Comparator.comparingInt(Employee::getSalary).reversed()).findFirst().get();
         //OR
         employeeList.stream().filter(e -> e.getCity().equals("Skopje")).max(Comparator.comparingInt(Employee::getSalary)).ifPresent(e -> System.out.println(e.getSalary()));
